@@ -6,15 +6,22 @@ void setup()
 }
 void draw()
 {
+  
+  int totalDot=0;
   for(int y=1; y<=320; y=y+55  ) 
   {
     for (int x=1; x<=320; x=x+55 )
     {
+
       Die bob = new Die(x,y);
       bob.roll();
       bob.show();
+      totalDot = totalDot + bob.num ;
+	
+
     }
   }
+  	text(totalDot ,300,340);
 }
 void mousePressed()
 {
@@ -51,6 +58,50 @@ class Die //models one single dice cube
     fill(255);
     if (num==1)
     	ellipse(myX+25, myY+25, 10, 10);
+    else if (num==2)
+    	
+    {
+    	ellipse(myX+15, myY+15, 10, 10);
+    	ellipse(myX+37, myY+37, 10, 10);
+    }
+    
+    else if (num==3)
+    
+    {
+    	ellipse(myX+12, myY+12, 10, 10);
+    	ellipse(myX+25, myY+25, 10, 10);
+    	ellipse(myX+37, myY+37, 10, 10);
+    }
+
+    else if (num==4)
+   
+    {	
+    	ellipse(myX+12, myY+12, 10, 10);
+    	ellipse(myX+12, myY+37, 10, 10);
+    	ellipse(myX+37, myY+12, 10, 10);	
+    	ellipse(myX+37, myY+37, 10, 10);
+    }
+    
+    else if (num==5)
+    
+    {	
+    	ellipse(myX+12, myY+12, 10, 10);
+    	ellipse(myX+12, myY+37, 10, 10);
+    	ellipse(myX+25, myY+25, 10, 10);
+    	ellipse(myX+37, myY+12, 10, 10);	
+    	ellipse(myX+37, myY+37, 10, 10);
+    }
+
+    else 
+     {	
+    	ellipse(myX+12, myY+12, 10, 10);
+    	ellipse(myX+12, myY+37, 10, 10);
+    	ellipse(myX+12, myY+25, 10, 10);
+    	ellipse(myX+37, myY+25, 10, 10);
+    	ellipse(myX+37, myY+12, 10, 10);	
+    	ellipse(myX+37, myY+37, 10, 10);
+     }
+
 		//your code here
 	}
 }
