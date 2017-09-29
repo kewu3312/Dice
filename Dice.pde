@@ -6,7 +6,7 @@ void setup()
 }
 void draw()
 {
-  
+  background(0); 
   int totalDot=0;
   for(int y=1; y<=320; y=y+55  ) 
   {
@@ -21,11 +21,13 @@ void draw()
 
     }
   }
-  	text(totalDot ,300,340);
+text("Total:" + totalDot ,250,340);
+ 	
 }
 void mousePressed()
 {
 	redraw();
+
 }
 class Die //models one single dice cube
 {
